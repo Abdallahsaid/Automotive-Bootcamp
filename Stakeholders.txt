@@ -1,5 +1,0 @@
-1-Restaurants,stores,clinics and medical centers ....
-2-google
-3-banks and Credit Card Networks
-4-sponsers if there is any
-5-users of the app
