@@ -31,6 +31,7 @@ int main(void)
     return 0;
 }
 
+//function to check if an array is sorted  if yes return 1 if no return 0
 u8_t isSorted(u32_t *arr, u8_t size)
 {
     u8_t index = 1;
@@ -47,6 +48,8 @@ u8_t isSorted(u32_t *arr, u8_t size)
     }
     return 1;
 }
+
+//function to bubble sort an array 
 void bubbleSort(u32_t *arr, u8_t size)
 {
     u8_t u8_index = 1;
@@ -72,6 +75,7 @@ void bubbleSort(u32_t *arr, u8_t size)
         /* code */
     } while (u8_swap == 1);
 }
+//function to do binary search on an array after checking if sorted or not and if not it calls the bubble sort function
 u8_t binarySearch(u32_t *arr, u8_t size, u32_t number)
 {
 
