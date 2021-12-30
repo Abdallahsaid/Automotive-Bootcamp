@@ -65,9 +65,12 @@ u8_t *balancedParentheses(u8_t *expression)
             {
                 return "UNBALANCED";
             }
-            else
+            else{
                 s8_t_counter_round--;
-
+                if(u8_t_last_open == ')'){
+                	u8_t_last_open=0;
+                }
+            }
             break;
         case '}':
             s8_t_counter_curly++;
@@ -82,8 +85,12 @@ u8_t *balancedParentheses(u8_t *expression)
             {
                 return "UNBALANCED";
             }
-            else
+            else{
                 s8_t_counter_curly--;
+            if(u8_t_last_open == '}'){
+                            	u8_t_last_open=0;
+                            }
+            }
             break;
         case ']':
             s8_t_counter_square++;
@@ -98,8 +105,13 @@ u8_t *balancedParentheses(u8_t *expression)
             {
                 return "UNBALANCED";
             }
-            else
+            else{
                 s8_t_counter_square--;
+            if(u8_t_last_open == ']'){
+                            	u8_t_last_open=0;
+                            }
+            }
+
             break;
         default:
             break;
