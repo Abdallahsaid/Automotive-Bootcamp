@@ -2,27 +2,27 @@
 #include "STD_TYPES.h"
 
 #define  ARRAY_SIZE     5
-#define  SEARCH_FAIL   255
+#define  SEARCH_FAIL   -1
 
 u8_t isSorted(u32_t *arr, u8_t size);
 void bubbleSort(u32_t *arr, u8_t size);
-u8_t binarySearch(u32_t *arr, u8_t size, u32_t number);
+s16_t binarySearch(u32_t *arr, u8_t size, u32_t number);
 
 int main(void)
 {
     u32_t arr[ARRAY_SIZE] = {61, 126, 15, 26, 21}; // after sorting {15, 21, 26, 61, 126 }
-    u8_t u8_result=0;
+    s16_t s16_result=0;
    
     
-    u8_result = binarySearch(arr, ARRAY_SIZE ,61);
+    s16_result = binarySearch(arr, ARRAY_SIZE ,14);
     
-    if ( u8_result == SEARCH_FAIL)
+    if ( s16_result == SEARCH_FAIL)
     {
         printf("Not found");
     }
     else
     {
-        printf ("arr[%d] = %ld",u8_result, arr[u8_result]);
+        printf ("arr[%d] = %ld",s16_result, arr[s16_result]);
     }
     
     
@@ -31,7 +31,6 @@ int main(void)
     return 0;
 }
 
-//function to check if an array is sorted  if yes return 1 if no return 0
 u8_t isSorted(u32_t *arr, u8_t size)
 {
     u8_t index = 1;
@@ -48,8 +47,6 @@ u8_t isSorted(u32_t *arr, u8_t size)
     }
     return 1;
 }
-
-//function to bubble sort an array 
 void bubbleSort(u32_t *arr, u8_t size)
 {
     u8_t u8_index = 1;
@@ -75,8 +72,7 @@ void bubbleSort(u32_t *arr, u8_t size)
         /* code */
     } while (u8_swap == 1);
 }
-//function to do binary search on an array after checking if sorted or not and if not it calls the bubble sort function
-u8_t binarySearch(u32_t *arr, u8_t size, u32_t number)
+s16_t binarySearch(u32_t *arr, u8_t size, u32_t number)
 {
 
     u8_t u8_start = 0 , u8_end = size -1 , u8_mid = 0;
@@ -99,7 +95,7 @@ u8_t binarySearch(u32_t *arr, u8_t size, u32_t number)
        else if (arr[u8_mid] > number)
        {   if(u8_mid!= u8_start)
            u8_end  = u8_mid - 1;
-       else  return SEARCH_FAIL;
+           else  return SEARCH_FAIL;
        }
        else if (arr[u8_mid] < number)
        {
