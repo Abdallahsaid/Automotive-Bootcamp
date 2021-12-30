@@ -106,13 +106,13 @@ u8_t pan_amount_check(u8_t *pan , f32_t amount)
     {
         if (strcmp(pan , gST_AccountBalance[u8_counter].primaryAccountNumber) == 0)
         {
-            if ( gST_AccountBalance[u8_counter].balance >= amount)
+            if ( gST_AccountBalance[u8_counter].balance < amount)
             {
-                return TRUE;
+                return FALSE;
             }
             else
             {
-                return FALSE;
+                return TRUE;
             }
             
             
