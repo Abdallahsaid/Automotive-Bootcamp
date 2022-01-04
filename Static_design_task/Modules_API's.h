@@ -22,12 +22,12 @@ u8_t MTR_ON(MTR_t motor ,MTRSpeed_t speed , MTRDirection_t );
 /********************
   MODULE : DIO   
 ********************/
-void DIO_vid_set_port_direction(DIOPort_t Port,DIODir_T direction);
-void DIO_vidSetPortValue(DIOPort_t Port,u8 value);
-u8 DIO_u8ReadPortValue(DIOPort_t Port);
+u8_t DIO_vid_set_port_direction(DIOPort_t Port,DIODir_T direction);
+u8_t DIO_vidSetPortValue(DIOPort_t Port,u8_t value);
+u8_t DIO_u8ReadPortValue(DIOPort_t Port);
 
-void DIO_vidSetPinDirection(DIOPort_t Port ,DIOPin_t pin ,DIODir_T direction);
-void DIO_vidSetPinValue(DIOPort_t Port ,DIOPin_t pin ,DIOValue_t value);
+u8_t DIO_vidSetPinDirection(DIOPort_t Port ,DIOPin_t pin ,DIODir_T direction);
+u8_t DIO_vidSetPinValue(DIOPort_t Port ,DIOPin_t pin ,DIOValue_t value);
 DIOValue_t DIO_u8ReadPinValue(DIOPort_t Port ,DIOPin_t pin);
 
 /********************
