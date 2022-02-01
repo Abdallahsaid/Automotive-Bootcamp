@@ -41,22 +41,4 @@ static void delay(u16_t max)
 		counter++;
 	}
 }
-/*
- //master app
-   while (1)
-   {
-     SPI_u8Transcieve('A'); //0b01000001
-     delay(50000);
-   }
 
-	 /*
-	//slave app
-		 u8_t u8_recieved=0;
-
-	  while (1)
-	  {
-		  u8_recieved = SPI_u8Transcieve(0);
-		  DIO_vidSetPortValue(DIO_PORTA ,u8_recieved );
-	  }
-
-*/
